@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MY Pet | Collares de paracord para mascotas</title>
+<meta name="description" content="Collares de paracord hechos a mano para perros y gatos. Envíos a todo Colombia. Pide el tuyo por WhatsApp.">
+<meta name="theme-color" content="#E5484D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral: #E5484D;
+    --carbon: #1F2937;
+    --rosa: #FFF1F0;
+    --gris: #64748B;
+    --blanco: #FFFFFF;
+    --radio: 20px;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Fredoka", system-ui, sans-serif;
+    font-weight: 500;
+    color: var(--carbon);
+    background: var(--blanco);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--carbon); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; }
+  .logo { font-weight: 700; font-size: 1.9rem; letter-spacing: -0.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+  .logo .my { color: var(--coral); }
+  .logo .pet { color: var(--carbon); }
+  .logo svg { width: 22px; height: 22px; fill: var(--coral); }
+  .nav-link { color: var(--gris); text-decoration: none; font-size: 1rem; }
+  .nav-link:hover { color: var(--carbon); }
+
+  /* Hero */
+  .hero { background: var(--rosa); padding: 72px 0 64px; }
+  .hero h1 {
+    font-weight: 700;
+    font-size: clamp(2.4rem, 7vw, 4.6rem);
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin: 0 0 20px;
+    max-width: 14ch;
+  }
+  .hero p { font-size: 1.2rem; color: var(--gris); max-width: 46ch; margin: 0 0 32px; }
+  .btn {
+    display: inline-block;
+    background: var(--coral);
+    color: var(--blanco);
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 16px 30px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform .15s ease, background .15s ease;
+  }
+  .btn:hover { background: #cf3a3f; transform: translateY(-2px); }
+  .btn.ghost { background: transparent; color: var(--carbon); border: 2px solid var(--carbon); }
+  .btn.ghost:hover { background: var(--carbon); color: var(--blanco); }
+
+  /* Cuerda trenzada: el elemento memorable */
+  .cuerda { display: block; width: 100%; height: 20px; }
+
+  section { padding: 72px 0; }
+  h2 { font-weight: 700; font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -0.5px; line-height: 1.15; margin: 0 0 12px; }
+  .intro { color: var(--gris); max-width: 52ch; margin: 0 0 40px; font-size: 1.1rem; }
+
+  /* Modelos */
+  .modelos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .modelo { border: 2px solid var(--carbon); border-radius: var(--radio); overflow: hidden; background: var(--blanco); display: flex; flex-direction: column; }
+  .modelo .foto {
+    aspect-ratio: 4 / 3;
+    background: var(--rosa);
+    display: grid; place-items: center;
+    color: var(--gris); font-size: .95rem;
+    border-bottom: 2px solid var(--carbon);
+  }
+  .modelo .foto img { width: 100%; height:100%; object-fit: cover; display: block; }
+  .modelo .info { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+  .modelo h3 { margin: 0; font-size: 1.3rem; font-weight: 700; }
+  .modelo p { margin: 0; color: var(--gris); font-size: .98rem; }
+  .modelo .precio { margin-top: auto; padding-top: 10px; font-weight: 700; color: var(--coral); }
+  .modelo.destacado { border-color: var(--coral); }
+  .modelo.destacado .foto { border-bottom-color: var(--coral); }
+
+  /* Cómo pedir (sí es una secuencia) */
+  .pasos-bg { background: var(--carbon); color: var(--blanco); }
+  .pasos-bg .intro { color: #cbd5e1; }
+  .pasos { list-style: none; counter-reset: paso; margin: 0; padding: 0; display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .pasos li { counter-increment: paso; position: relative; padding-top: 64px; }
+  .pasos li::before {
+    content: counter(paso);
+    position: absolute; top: 0; left: 0;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--coral); color: var(--blanco);
+    display: grid; place-items: center;
+    font-weight: 700; font-size: 1.4rem;
+  }
+  .pasos h3 { margin: 0 0 6px; font-size: 1.25rem; }
+  .pasos p { margin: 0; color: #cbd5e1; }
+
+  /* Medidas */
+  .medidas { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start; }
+  .medidas ul { margin: 0; padding-left: 1.2em; color: var(--gris); }
+  .medidas li { margin-bottom: 8px; }
+  .nota { background: var(--rosa); border-radius: var(--radio); padding: 24px; }
+  .nota strong { color: var(--coral); }
+
+  /* Cierre */
+  .cierre { background: var(--coral); color: var(--blanco); text-align: left; }
+  .cierre h2 { color: var(--blanco); }
+  .cierre p { margin: 0 0 28px; max-width: 46ch; font-size: 1.15rem; }
+  .cierre .btn { background: var(--blanco); color: var(--carbon); }
+  .cierre .btn:hover { background: var(--rosa); }
+  .cierre .btn.ghost { background: transparent; color: var(--blanco); border-color: var(--blanco); margin-left: 8px; }
+  .cierre .btn.ghost:hover { background: var(--blanco); color: var(--coral); }
+
+  footer { padding: 28px 0; color: var(--gris); font-size: .95rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+
+  @media (max-width: 560px) {
+    .hero { padding: 48px 0 44px; }
+    section { padding: 52px 0; }
+    .cierre .btn.ghost { margin: 12px 0 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .btn { transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="MY Pet, inicio">
+      <span><span class="my">MY</span><span class="pet">Pet</span></span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="16" rx="5.5" ry="4.5"/><ellipse cx="5" cy="10" rx="2.2" ry="2.8"/><ellipse cx="9.5" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="14.5" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="19" cy="10" rx="2.2" ry="2.8"/></svg>
+    </a>
+    <a class="nav-link" href="#modelos">Ver modelos</a>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <h1>Collares hechos a mano para tu peludo</h1>
+      <p>Collares de paracord para perros y gatos, trenzados uno a uno en Medellín. Escoge modelo y colores, y te lo enviamos a toda Colombia.</p>
+      <a class="btn" href="https://wa.me/57XXXXXXXXXX?text=Hola%20MY%20Pet%2C%20quiero%20pedir%20un%20collar" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+      <a class="btn ghost" href="https://instagram.com/mypetmed" target="_blank" rel="noopener">Ver Instagram</a>
+    </div>
+  </div>
+
+  <!-- Cuerda trenzada -->
+  <svg class="cuerda" aria-hidden="true" preserveAspectRatio="none">
+    <defs>
+      <pattern id="trenza" width="28" height="20" patternUnits="userSpaceOnUse">
+        <path d="M0 10 Q7 -2 14 10 T28 10" stroke="#E5484D" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M0 10 Q7 22 14 10 T28 10" stroke="#1F2937" stroke-width="5" fill="none" stroke-linecap="round"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="20" fill="url(#trenza)"/>
+  </svg>
+
+  <section id="modelos">
+    <div class="wrap">
+      <h2>Elige tu modelo</h2>
+      <p class="intro">Todos van en paracord resistente, con hebilla de colores. Puedes combinar los colores que quieras.</p>
+      <div class="modelos">
+        <article class="modelo">
+          <div class="foto"><img src="img/Dash.jpeg" alt="Collar pequeño MY Pet"></div>
+          <div class="info">
+            <h3>Collar pequeño</h3>
+            <p>Para gatos y perros pequeños.</p>
+            <span class="precio">Consulta el precio</span>
+          </div>
+        </article>
+        <article class="modelo">
+          <div class="foto"><img src="img/Iris.jpeg" alt="Collar mediano MY Pet"></div>
+          <div class="info">
+            <h3>Collar mediano</h3>
+            <p>Para perros de talla media.</p>
+            <span class="precio">Consulta el precio</span>
+          </div>
+        </article>
+        <article class="modelo">
+          <div class="foto"><img src="img/Zaly.jpeg" alt="Collar decorado MY Pet"></div>
+          <div class="info">
+            <h3>Collar decorado</h3>
+            <p>Con chaquiras y estrellitas para que se luzca.</p>
+            <span class="precio">Consulta el precio</span>
+          </div>
+        </article>
+        <article class="modelo">
+          <div class="foto"><img src="img/TrenzaYeli.jpeg" alt="Llavero MY Pet"></div>
+          <div class="info">
+            <h3>Trenzado</h3>
+            <p>El mismo trenzado, para llevarlo contigo.</p>
+            <span class="precio">Consulta el precio</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pasos-bg" id="como-pedir">
+    <div class="wrap">
+      <h2>Cómo pedir</h2>
+      <p class="intro">Lo hacemos todo por WhatsApp, sin registros ni formularios.</p>
+      <ol class="pasos">
+        <li>
+          <h3>Escríbenos</h3>
+          <p>Cuéntanos el modelo, los colores y el tamaño de tu mascota.</p>
+        </li>
+        <li>
+          <h3>Confirmamos tu pedido</h3>
+          <p>Te enviamos el valor, el tiempo de entrega y las formas de pago.</p>
+        </li>
+        <li>
+          <h3>Lo trenzamos y lo enviamos</h3>
+          <p>Hecho a mano y empacado con cariño, llega a cualquier ciudad de Colombia.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="medidas">
+    <div class="wrap">
+      <h2>¿Qué talla necesita?</h2>
+      <p class="intro">Medir toma un minuto.</p>
+      <div class="medidas">
+        <ul>
+          <li>Pasa una cinta métrica (o un cordón) alrededor del cuello, donde iría el collar.</li>
+          <li>Déjale espacio para que entren dos dedos entre el collar y el cuello.</li>
+          <li>Envíanos esa medida en centímetros por WhatsApp.</li>
+        </ul>
+        <div class="nota">
+          <strong>¿Dudas con la talla?</strong> Mándanos una foto de tu mascota y el peso aproximado. Te ayudamos a elegir.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cierre">
+    <div class="wrap">
+      <h2>Pide el collar de tu peludo</h2>
+      <p>Cada pieza se hace por encargo, con los colores que elijas.</p>
+      <a class="btn" href="https://wa.me/57XXXXXXXXXX?text=Hola%20MY%20Pet%2C%20quiero%20pedir%20un%20collar" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <a class="btn ghost" href="https://instagram.com/mypetmed" target="_blank" rel="noopener">Ver Instagram</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="anio">2026</span> MY Pet · Hecho a mano en Medellín</span>
+    
+  </div>
+</footer>
+
+<script>document.getElementById('anio').textContent = new Date().getFullYear();</script>
+</body>
+</html>
