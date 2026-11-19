@@ -1,0 +1,14 @@
+{
+  "name": "MY Pet · Collares de paracord",
+  "short_name": "MY Pet",
+  "lang": "es-CO",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FFF1F0",
+  "theme_color": "#E5484D",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/img/opt/icon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ]
+}

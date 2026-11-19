@@ -2,273 +2,662 @@
 <html lang="es-CO">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MY Pet | Collares de paracord para mascotas</title>
-<meta name="description" content="Collares de paracord hechos a mano para perros y gatos. Envíos a todo Colombia. Pide el tuyo por WhatsApp.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Collares de paracord personalizados para perros y gatos | MY Pet Medellín</title>
+<meta name="description" content="Collares de paracord hechos a mano con el nombre de tu mascota. Elige estilo, colores y dijes, diséñalo en línea y pídelo por WhatsApp. Envíos a toda Colombia.">
 <meta name="theme-color" content="#E5484D">
+<meta name="color-scheme" content="light">
+
+<!-- Redes sociales (WhatsApp, Instagram, Facebook). Cuando tengas dominio, cambia las rutas de imagen por la URL completa: https://tudominio.com/img/opt/og-mypet.jpg -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MY Pet">
+<meta property="og:locale" content="es_CO">
+<meta property="og:title" content="MY Pet · Collares de paracord con el nombre de tu peludo">
+<meta property="og:description" content="Hechos a mano en Medellín. Diseña el tuyo: estilo, colores, nombre y dijes. Envíos a toda Colombia.">
+<meta property="og:image" content="/img/opt/og-mypet.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Collares de paracord MY Pet con nombre y dijes">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --coral: #E5484D;
-    --carbon: #1F2937;
-    --rosa: #FFF1F0;
-    --gris: #64748B;
-    --blanco: #FFFFFF;
-    --radio: 20px;
-  }
-  *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    font-family: "Fredoka", system-ui, sans-serif;
-    font-weight: 500;
-    color: var(--carbon);
-    background: var(--blanco);
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
-  a { color: inherit; }
-  :focus-visible { outline: 3px solid var(--carbon); outline-offset: 3px; border-radius: 6px; }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
 
-  /* Header */
-  header .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; }
-  .logo { font-weight: 700; font-size: 1.9rem; letter-spacing: -0.5px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
-  .logo .my { color: var(--coral); }
-  .logo .pet { color: var(--carbon); }
-  .logo svg { width: 22px; height: 22px; fill: var(--coral); }
-  .nav-link { color: var(--gris); text-decoration: none; font-size: 1rem; }
-  .nav-link:hover { color: var(--carbon); }
-
-  /* Hero */
-  .hero { background: var(--rosa); padding: 72px 0 64px; }
-  .hero h1 {
-    font-weight: 700;
-    font-size: clamp(2.4rem, 7vw, 4.6rem);
-    line-height: 1.05;
-    letter-spacing: -1.5px;
-    margin: 0 0 20px;
-    max-width: 14ch;
-  }
-  .hero p { font-size: 1.2rem; color: var(--gris); max-width: 46ch; margin: 0 0 32px; }
-  .btn {
-    display: inline-block;
-    background: var(--coral);
-    color: var(--blanco);
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 1.1rem;
-    padding: 16px 30px;
-    border-radius: 999px;
-    text-decoration: none;
-    transition: transform .15s ease, background .15s ease;
-  }
-  .btn:hover { background: #cf3a3f; transform: translateY(-2px); }
-  .btn.ghost { background: transparent; color: var(--carbon); border: 2px solid var(--carbon); }
-  .btn.ghost:hover { background: var(--carbon); color: var(--blanco); }
-
-  /* Cuerda trenzada: el elemento memorable */
-  .cuerda { display: block; width: 100%; height: 20px; }
-
-  section { padding: 72px 0; }
-  h2 { font-weight: 700; font-size: clamp(1.7rem, 4vw, 2.4rem); letter-spacing: -0.5px; line-height: 1.15; margin: 0 0 12px; }
-  .intro { color: var(--gris); max-width: 52ch; margin: 0 0 40px; font-size: 1.1rem; }
-
-  /* Modelos */
-  .modelos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-  .modelo { border: 2px solid var(--carbon); border-radius: var(--radio); overflow: hidden; background: var(--blanco); display: flex; flex-direction: column; }
-  .modelo .foto {
-    aspect-ratio: 4 / 3;
-    background: var(--rosa);
-    display: grid; place-items: center;
-    color: var(--gris); font-size: .95rem;
-    border-bottom: 2px solid var(--carbon);
-  }
-  .modelo .foto img { width: 100%; height:100%; object-fit: cover; display: block; }
-  .modelo .info { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
-  .modelo h3 { margin: 0; font-size: 1.3rem; font-weight: 700; }
-  .modelo p { margin: 0; color: var(--gris); font-size: .98rem; }
-  .modelo .precio { margin-top: auto; padding-top: 10px; font-weight: 700; color: var(--coral); }
-  .modelo.destacado { border-color: var(--coral); }
-  .modelo.destacado .foto { border-bottom-color: var(--coral); }
-
-  /* Cómo pedir (sí es una secuencia) */
-  .pasos-bg { background: var(--carbon); color: var(--blanco); }
-  .pasos-bg .intro { color: #cbd5e1; }
-  .pasos { list-style: none; counter-reset: paso; margin: 0; padding: 0; display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-  .pasos li { counter-increment: paso; position: relative; padding-top: 64px; }
-  .pasos li::before {
-    content: counter(paso);
-    position: absolute; top: 0; left: 0;
-    width: 48px; height: 48px; border-radius: 50%;
-    background: var(--coral); color: var(--blanco);
-    display: grid; place-items: center;
-    font-weight: 700; font-size: 1.4rem;
-  }
-  .pasos h3 { margin: 0 0 6px; font-size: 1.25rem; }
-  .pasos p { margin: 0; color: #cbd5e1; }
-
-  /* Medidas */
-  .medidas { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); align-items: start; }
-  .medidas ul { margin: 0; padding-left: 1.2em; color: var(--gris); }
-  .medidas li { margin-bottom: 8px; }
-  .nota { background: var(--rosa); border-radius: var(--radio); padding: 24px; }
-  .nota strong { color: var(--coral); }
-
-  /* Cierre */
-  .cierre { background: var(--coral); color: var(--blanco); text-align: left; }
-  .cierre h2 { color: var(--blanco); }
-  .cierre p { margin: 0 0 28px; max-width: 46ch; font-size: 1.15rem; }
-  .cierre .btn { background: var(--blanco); color: var(--carbon); }
-  .cierre .btn:hover { background: var(--rosa); }
-  .cierre .btn.ghost { background: transparent; color: var(--blanco); border-color: var(--blanco); margin-left: 8px; }
-  .cierre .btn.ghost:hover { background: var(--blanco); color: var(--coral); }
-
-  footer { padding: 28px 0; color: var(--gris); font-size: .95rem; }
-  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
-
-  @media (max-width: 560px) {
-    .hero { padding: 48px 0 44px; }
-    section { padding: 52px 0; }
-    .cierre .btn.ghost { margin: 12px 0 0; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    .btn { transition: none; }
-  }
-</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MY Pet",
+  "description": "Collares de paracord personalizados para perros y gatos, hechos a mano en Medellín.",
+  "areaServed": { "@type": "Country", "name": "Colombia" },
+  "address": { "@type": "PostalAddress", "addressLocality": "Medellín", "addressCountry": "CO" },
+  "sameAs": ["https://instagram.com/mypetmed"]
+}
+</script>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <a class="logo" href="#" aria-label="MY Pet, inicio">
-      <span><span class="my">MY</span><span class="pet">Pet</span></span>
-      <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="16" rx="5.5" ry="4.5"/><ellipse cx="5" cy="10" rx="2.2" ry="2.8"/><ellipse cx="9.5" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="14.5" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="19" cy="10" rx="2.2" ry="2.8"/></svg>
+<!-- Íconos reutilizables -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="trenza" width="28" height="20" patternUnits="userSpaceOnUse">
+      <path d="M0 10 Q7 -2 14 10 T28 10" stroke="#E5484D" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <path d="M0 10 Q7 22 14 10 T28 10" stroke="#1F2937" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </pattern>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.81 11.81 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41Z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/></g><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></symbol>
+    <symbol id="i-pata" viewBox="0 0 24 24"><g fill="currentColor"><ellipse cx="12" cy="16" rx="5.5" ry="4.5"/><ellipse cx="5" cy="10" rx="2.2" ry="2.8"/><ellipse cx="9.5" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="14.5" cy="5.5" rx="2.2" ry="2.8"/><ellipse cx="19" cy="10" rx="2.2" ry="2.8"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-flecha" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-corazon" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.1a4.3 4.3 0 0 1 7.5 2.7C19.5 15.4 12 20 12 20Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-regla" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 15.5 15.5 3.5l5 5-12 12z"/><path d="M7.5 11.5l2 2M10.5 8.5l2 2M13.5 5.5l2 2"/></g></symbol>
+    <symbol id="i-letras" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="2.5" y="7" width="9" height="10" rx="2"/><rect x="12.5" y="7" width="9" height="10" rx="2"/></g><path d="M5 14.5 7 9.5l2 5M5.8 12.6h2.4M15 9.5v5h2a1.25 1.25 0 0 0 0-2.5h-2m0 0h1.6a1.25 1.25 0 0 0 0-2.5H15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-camion" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M2.5 6h11v10h-11zM13.5 9.5h4l3.5 3.5v3h-7.5z"/><circle cx="6.5" cy="17.5" r="2" fill="#fff"/><circle cx="17" cy="17.5" r="2" fill="#fff"/></g></symbol>
+    <symbol id="i-compartir" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3.5M7.5 8 12 3.5 16.5 8"/><path d="M5 12v7.5h14V12"/></g></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<a class="saltar" href="#principal">Saltar al contenido</a>
+
+<!-- Barra de anuncio: cámbiala según la temporada -->
+<div class="anuncio">
+  <p class="wrap"><span aria-hidden="true">☃️</span> <strong>Navidad:</strong> regálale un collar con su nombre<span class="solo-desk">. Pide con tiempo, cada uno se teje a mano</span>. <a href="#personaliza" data-track="anuncio">Diseñar ahora</a></p>
+</div>
+
+<header class="header" id="inicio">
+  <div class="wrap header__in">
+    <a class="logo" href="#inicio" aria-label="MY Pet, ir al inicio">
+      <span><span class="logo__my">MY</span><span class="logo__pet">Pet</span></span>
+      <svg aria-hidden="true"><use href="#i-pata"/></svg>
     </a>
-    <a class="nav-link" href="#modelos">Ver modelos</a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#estilos">Estilos</a>
+      <a href="#galeria">Galería</a>
+      <a href="#personaliza">Diseña el tuyo</a>
+      <a href="#como-pedir">Cómo pedir</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <a class="btn btn--sm header__cta" href="#personaliza" data-wa="general" data-origen="header">
+      <svg aria-hidden="true"><use href="#i-wa"/></svg><span>Pedir</span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
-<main>
-  <div class="hero">
-    <div class="wrap">
-      <h1>Collares hechos a mano para tu peludo</h1>
-      <p>Collares de paracord para perros y gatos, trenzados uno a uno en Medellín. Escoge modelo y colores, y te lo enviamos a toda Colombia.</p>
-      <a class="btn" href="https://wa.me/57XXXXXXXXXX?text=Hola%20MY%20Pet%2C%20quiero%20pedir%20un%20collar" target="_blank" rel="noopener">Pedir por WhatsApp</a>
-      <a class="btn ghost" href="https://instagram.com/mypetmed" target="_blank" rel="noopener">Ver Instagram</a>
-    </div>
-  </div>
+<main id="principal">
 
-  <!-- Cuerda trenzada -->
-  <svg class="cuerda" aria-hidden="true" preserveAspectRatio="none">
-    <defs>
-      <pattern id="trenza" width="28" height="20" patternUnits="userSpaceOnUse">
-        <path d="M0 10 Q7 -2 14 10 T28 10" stroke="#E5484D" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <path d="M0 10 Q7 22 14 10 T28 10" stroke="#1F2937" stroke-width="5" fill="none" stroke-linecap="round"/>
-      </pattern>
-    </defs>
-    <rect width="100%" height="20" fill="url(#trenza)"/>
-  </svg>
-
-  <section id="modelos">
-    <div class="wrap">
-      <h2>Elige tu modelo</h2>
-      <p class="intro">Todos van en paracord resistente, con hebilla de colores. Puedes combinar los colores que quieras.</p>
-      <div class="modelos">
-        <article class="modelo">
-          <div class="foto"><img src="img/Dash.jpeg" alt="Collar pequeño MY Pet"></div>
-          <div class="info">
-            <h3>Collar pequeño</h3>
-            <p>Para gatos y perros pequeños.</p>
-            <span class="precio">Consulta el precio</span>
-          </div>
-        </article>
-        <article class="modelo">
-          <div class="foto"><img src="img/Iris.jpeg" alt="Collar mediano MY Pet"></div>
-          <div class="info">
-            <h3>Collar mediano</h3>
-            <p>Para perros de talla media.</p>
-            <span class="precio">Consulta el precio</span>
-          </div>
-        </article>
-        <article class="modelo">
-          <div class="foto"><img src="img/Zaly.jpeg" alt="Collar decorado MY Pet"></div>
-          <div class="info">
-            <h3>Collar decorado</h3>
-            <p>Con chaquiras y estrellitas para que se luzca.</p>
-            <span class="precio">Consulta el precio</span>
-          </div>
-        </article>
-        <article class="modelo">
-          <div class="foto"><img src="img/TrenzaYeli.jpeg" alt="Llavero MY Pet"></div>
-          <div class="info">
-            <h3>Trenzado</h3>
-            <p>El mismo trenzado, para llevarlo contigo.</p>
-            <span class="precio">Consulta el precio</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="pasos-bg" id="como-pedir">
-    <div class="wrap">
-      <h2>Cómo pedir</h2>
-      <p class="intro">Lo hacemos todo por WhatsApp, sin registros ni formularios.</p>
-      <ol class="pasos">
-        <li>
-          <h3>Escríbenos</h3>
-          <p>Cuéntanos el modelo, los colores y el tamaño de tu mascota.</p>
-        </li>
-        <li>
-          <h3>Confirmamos tu pedido</h3>
-          <p>Te enviamos el valor, el tiempo de entrega y las formas de pago.</p>
-        </li>
-        <li>
-          <h3>Lo trenzamos y lo enviamos</h3>
-          <p>Hecho a mano y empacado con cariño, llega a cualquier ciudad de Colombia.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="medidas">
-    <div class="wrap">
-      <h2>¿Qué talla necesita?</h2>
-      <p class="intro">Medir toma un minuto.</p>
-      <div class="medidas">
-        <ul>
-          <li>Pasa una cinta métrica (o un cordón) alrededor del cuello, donde iría el collar.</li>
-          <li>Déjale espacio para que entren dos dedos entre el collar y el cuello.</li>
-          <li>Envíanos esa medida en centímetros por WhatsApp.</li>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__texto">
+        <p class="eyebrow"><svg aria-hidden="true"><use href="#i-pata"/></svg> Hecho a mano en Medellín</p>
+        <h1>Collares de paracord con el <span class="subrayado">nombre</span> de tu peludo</h1>
+        <p class="hero__sub">Tejidos a mano uno a uno, a la medida de su cuello y con los colores y dijes que tú elijas. Enviamos a toda Colombia.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--lg" href="#personaliza" data-track="hero_disenar">Diseña su collar <svg aria-hidden="true"><use href="#i-flecha"/></svg></a>
+          <a class="btn btn--lg btn--ghost" href="#personaliza" data-wa="general" data-origen="hero"><svg aria-hidden="true"><use href="#i-wa"/></svg> Pedir por WhatsApp</a>
+        </div>
+        <ul class="hero__trust">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg> Sin registros ni pagos en la web</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg> Todo por WhatsApp, fácil y rápido</li>
         </ul>
-        <div class="nota">
-          <strong>¿Dudas con la talla?</strong> Mándanos una foto de tu mascota y el peso aproximado. Te ayudamos a elegir.
+        <div class="prueba">
+          <div class="prueba__fotos" aria-hidden="true">
+            <img src="img/opt/hanna-120.webp" alt="" width="120" height="120">
+            <img src="img/opt/rino-120.webp" alt="" width="120" height="120">
+            <img src="img/opt/iris-120.webp" alt="" width="120" height="120">
+            <img src="img/opt/danna-120.webp" alt="" width="120" height="120">
+          </div>
+          <p><strong>Hanna, Rino, Iris, Danna</strong> y muchos peludos más ya estrenaron el suyo.</p>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <figure class="hero__foto">
+          <picture>
+            <source type="image/webp" srcset="img/opt/minnie-hero-480.webp 480w, img/opt/minnie-hero-800.webp 800w" sizes="(min-width: 900px) 460px, 92vw">
+            <img src="img/opt/minnie-hero-800.jpg" alt="Peluche de perrito con collar MY Pet estilo Flores en fucsia y rosa palo, con perlas, el nombre MINNIE y dijes de fresa y trébol" width="800" height="1000" fetchpriority="high">
+          </picture>
+          <figcaption class="sticker">Nuevo · Estilo Flores</figcaption>
+        </figure>
+        <div class="hero__mini" aria-hidden="true">
+          <img src="img/opt/hanna-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async">
+          <span>Cobra · Hanna</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="cierre">
+  <svg class="cuerda" aria-hidden="true" preserveAspectRatio="none"><rect width="100%" height="20" fill="url(#trenza)"/></svg>
+
+  <!-- ============ BENEFICIOS ============ -->
+  <section class="beneficios" aria-label="Por qué elegir MY Pet">
+    <ul class="wrap beneficios__grid">
+      <li class="reveal">
+        <span class="beneficio__ico"><svg aria-hidden="true"><use href="#i-corazon"/></svg></span>
+        <div><h3>Hecho a mano</h3><p>Cada collar se teje uno a uno en Medellín.</p></div>
+      </li>
+      <li class="reveal">
+        <span class="beneficio__ico"><svg aria-hidden="true"><use href="#i-regla"/></svg></span>
+        <div><h3>A su medida</h3><p>Lo hacemos con la medida exacta de su cuello.</p></div>
+      </li>
+      <li class="reveal">
+        <span class="beneficio__ico"><svg aria-hidden="true"><use href="#i-letras"/></svg></span>
+        <div><h3>Con su nombre</h3><p>Letras y dijes para que sea solo suyo.</p></div>
+      </li>
+      <li class="reveal">
+        <span class="beneficio__ico"><svg aria-hidden="true"><use href="#i-camion"/></svg></span>
+        <div><h3>Envíos nacionales</h3><p>Lo llevamos a cualquier ciudad de Colombia.</p></div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ ESTILOS (catálogo) ============ -->
+  <section class="seccion" id="estilos">
     <div class="wrap">
-      <h2>Pide el collar de tu peludo</h2>
-      <p>Cada pieza se hace por encargo, con los colores que elijas.</p>
-      <a class="btn" href="https://wa.me/57XXXXXXXXXX?text=Hola%20MY%20Pet%2C%20quiero%20pedir%20un%20collar" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-      <a class="btn ghost" href="https://instagram.com/mypetmed" target="_blank" rel="noopener">Ver Instagram</a>
+      <div class="seccion__head reveal">
+        <p class="kicker">Nuestros estilos</p>
+        <h2>Elige el tejido que va con su personalidad</h2>
+        <p class="intro">Todos en paracord resistente, con los colores que quieras, su nombre en letras y dijes a elección.</p>
+      </div>
+
+      <div class="estilos" role="list">
+        <article class="estilo estilo--nuevo" role="listitem">
+          <div class="estilo__foto">
+            <picture>
+              <source type="image/webp" srcset="img/opt/minnie-400.webp 400w, img/opt/minnie-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 45vw, 78vw">
+              <img src="img/opt/minnie-720.jpg" alt="Collar estilo Flores fucsia y rosa palo con perlas" width="720" height="720" loading="lazy" decoding="async">
+            </picture>
+            <span class="tag tag--coral">Nuevo</span>
+          </div>
+          <div class="estilo__info">
+            <h3>Flores</h3>
+            <p>Flores tejidas a mano con perlas. El más coqueto, para lucirse en cada paseo.</p>
+            <p class="estilo__precio" data-precio="flores">Precio según diseño</p>
+            <div class="estilo__acciones">
+              <button class="btn btn--sm" type="button" data-estilo="flores">Diseñar</button>
+              <a class="link" href="#galeria" data-filtrar="flores">Ver ejemplos</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="estilo" role="listitem">
+          <div class="estilo__foto">
+            <picture>
+              <source type="image/webp" srcset="img/opt/hanna-400.webp 400w, img/opt/hanna-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 45vw, 78vw">
+              <img src="img/opt/hanna-720.jpg" alt="Collar estilo Cobra rosa palo y fucsia con el nombre HANNA" width="720" height="720" loading="lazy" decoding="async">
+            </picture>
+            <span class="tag">El más pedido</span>
+          </div>
+          <div class="estilo__info">
+            <h3>Cobra</h3>
+            <p>El clásico: plano, firme y cómodo. Perfecto para lucir su nombre en letras.</p>
+            <p class="estilo__precio" data-precio="cobra">Precio según diseño</p>
+            <div class="estilo__acciones">
+              <button class="btn btn--sm" type="button" data-estilo="cobra">Diseñar</button>
+              <a class="link" href="#galeria" data-filtrar="cobra">Ver ejemplos</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="estilo" role="listitem">
+          <div class="estilo__foto">
+            <picture>
+              <source type="image/webp" srcset="img/opt/rino-400.webp 400w, img/opt/rino-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 45vw, 78vw">
+              <img src="img/opt/rino-720.jpg" alt="Collar estilo Trenza turquesa y verde botella con el nombre RINO" width="720" height="720" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="estilo__info">
+            <h3>Trenza</h3>
+            <p>Trenza gruesa tipo espiga, con mucho cuerpo. Se ve increíble en perros medianos y grandes.</p>
+            <p class="estilo__precio" data-precio="trenza">Precio según diseño</p>
+            <div class="estilo__acciones">
+              <button class="btn btn--sm" type="button" data-estilo="trenza">Diseñar</button>
+              <a class="link" href="#galeria" data-filtrar="trenza">Ver ejemplos</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="estilo" role="listitem">
+          <div class="estilo__foto">
+            <picture>
+              <source type="image/webp" srcset="img/opt/danna-400.webp 400w, img/opt/danna-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 45vw, 78vw">
+              <img src="img/opt/danna-720.jpg" alt="Collar estilo Mini en cordón rosa palo con perlas, el nombre DANNA y dijes de corazón y cerezas" width="720" height="720" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="estilo__info">
+            <h3>Mini</h3>
+            <p>Cordón sencillo con nudos corredizos y perlas. Liviano, ideal para peludos pequeños.</p>
+            <p class="estilo__precio" data-precio="mini">Precio según diseño</p>
+            <div class="estilo__acciones">
+              <button class="btn btn--sm" type="button" data-estilo="mini">Diseñar</button>
+              <a class="link" href="#galeria" data-filtrar="mini">Ver ejemplos</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALERÍA (prueba social) ============ -->
+  <section class="seccion seccion--rosa" id="galeria">
+    <div class="wrap">
+      <div class="seccion__head reveal">
+        <p class="kicker">Galería</p>
+        <h2>Ellos ya tienen el suyo</h2>
+        <p class="intro">Collares reales que hemos tejido. ¿Te enamoraste de uno? Tócalo y lo personalizas con el nombre de tu peludo.</p>
+      </div>
+
+      <div class="filtros" role="group" aria-label="Filtrar por estilo">
+        <button type="button" aria-pressed="true" data-filtro="todos">Todos</button>
+        <button type="button" aria-pressed="false" data-filtro="flores">Flores</button>
+        <button type="button" aria-pressed="false" data-filtro="cobra">Cobra</button>
+        <button type="button" aria-pressed="false" data-filtro="trenza">Trenza</button>
+        <button type="button" aria-pressed="false" data-filtro="mini">Mini</button>
+      </div>
+
+      <ul class="galeria">
+        <li class="pieza" data-estilo="flores">
+          <picture>
+            <source type="image/webp" srcset="img/opt/minnie-400.webp 400w, img/opt/minnie-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 31vw, 46vw">
+            <img src="img/opt/minnie-720.jpg" alt="Collar estilo Flores fucsia y rosa palo con perlas, nombre MINNIE y dijes de fresa y trébol" width="720" height="720" loading="lazy" decoding="async">
+          </picture>
+          <div class="pieza__info"><strong>Minnie</strong><span>Flores · fucsia y rosa palo</span></div>
+          <button class="pieza__btn" type="button" data-nombre="Minnie" data-preset='{"estilo":"flores","c1":"fucsia","c2":"rosapalo","dijes":["fresa","trebol"]}'>Quiero uno así</button>
+        </li>
+        <li class="pieza" data-estilo="cobra">
+          <picture>
+            <source type="image/webp" srcset="img/opt/hanna-400.webp 400w, img/opt/hanna-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 31vw, 46vw">
+            <img src="img/opt/hanna-720.jpg" alt="Collar estilo Cobra rosa palo y fucsia, nombre HANNA y dijes de flor y estrella" width="720" height="720" loading="lazy" decoding="async">
+          </picture>
+          <div class="pieza__info"><strong>Hanna</strong><span>Cobra · rosa palo y fucsia</span></div>
+          <button class="pieza__btn" type="button" data-nombre="Hanna" data-preset='{"estilo":"cobra","c1":"rosapalo","c2":"fucsia","broche":"negro","dijes":["flor","estrella"]}'>Quiero uno así</button>
+        </li>
+        <li class="pieza" data-estilo="cobra">
+          <picture>
+            <source type="image/webp" srcset="img/opt/hermanos-400.webp 400w, img/opt/hermanos-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 31vw, 46vw">
+            <img src="img/opt/hermanos-720.jpg" alt="Tres collares estilo Cobra naranja y azul a juego con los nombres TOBBY, MAX y ROCCO" width="720" height="720" loading="lazy" decoding="async">
+          </picture>
+          <div class="pieza__info"><strong>Tobby, Max y Rocco</strong><span>Cobra · combo hermanos</span></div>
+          <button class="pieza__btn" type="button" data-nombre="Tobby, Max y Rocco" data-preset='{"estilo":"cobra","c1":"naranja","c2":"azul","broche":"negro","dijes":["galleta","muneco"],"cantidad":3}'>Quiero uno así</button>
+        </li>
+        <li class="pieza" data-estilo="trenza">
+          <picture>
+            <source type="image/webp" srcset="img/opt/rino-400.webp 400w, img/opt/rino-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 31vw, 46vw">
+            <img src="img/opt/rino-720.jpg" alt="Collar estilo Trenza turquesa y verde botella, nombre RINO y dije de dona" width="720" height="720" loading="lazy" decoding="async">
+          </picture>
+          <div class="pieza__info"><strong>Rino</strong><span>Trenza · turquesa y verde botella</span></div>
+          <button class="pieza__btn" type="button" data-nombre="Rino" data-preset='{"estilo":"trenza","c1":"turquesa","c2":"verdebotella","broche":"negro","dijes":["dona"]}'>Quiero uno así</button>
+        </li>
+        <li class="pieza" data-estilo="mini">
+          <picture>
+            <source type="image/webp" srcset="img/opt/danna-400.webp 400w, img/opt/danna-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 31vw, 46vw">
+            <img src="img/opt/danna-720.jpg" alt="Collar estilo Mini rosa palo con perlas, nombre DANNA y dijes de corazón y cerezas" width="720" height="720" loading="lazy" decoding="async">
+          </picture>
+          <div class="pieza__info"><strong>Danna</strong><span>Mini · rosa palo con perlas</span></div>
+          <button class="pieza__btn" type="button" data-nombre="Danna" data-preset='{"estilo":"mini","c1":"rosapalo","dijes":["corazon","cereza"]}'>Quiero uno así</button>
+        </li>
+        <li class="pieza" data-estilo="cobra">
+          <picture>
+            <source type="image/webp" srcset="img/opt/iris-400.webp 400w, img/opt/iris-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 31vw, 46vw">
+            <img src="img/opt/iris-720.jpg" alt="Collar estilo Cobra fucsia y blanco, nombre IRIS y dijes de estrella y dona" width="720" height="720" loading="lazy" decoding="async">
+          </picture>
+          <div class="pieza__info"><strong>Iris</strong><span>Cobra · fucsia y blanco</span></div>
+          <button class="pieza__btn" type="button" data-nombre="Iris" data-preset='{"estilo":"cobra","c1":"fucsia","c2":"blanco","broche":"rojo","dijes":["estrella","dona"]}'>Quiero uno así</button>
+        </li>
+        <li class="pieza" data-estilo="cobra">
+          <picture>
+            <source type="image/webp" srcset="img/opt/lupe-400.webp 400w, img/opt/lupe-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 31vw, 46vw">
+            <img src="img/opt/lupe-720.jpg" alt="Collar estilo Cobra lila y rosa palo, nombre LUPE y dije de corazón" width="720" height="720" loading="lazy" decoding="async">
+          </picture>
+          <div class="pieza__info"><strong>Lupe</strong><span>Cobra · lila y rosa palo</span></div>
+          <button class="pieza__btn" type="button" data-nombre="Lupe" data-preset='{"estilo":"cobra","c1":"lila","c2":"rosapalo","broche":"blanco","dijes":["corazon"]}'>Quiero uno así</button>
+        </li>
+        <li class="pieza" data-estilo="cobra">
+          <picture>
+            <source type="image/webp" srcset="img/opt/dasha-400.webp 400w, img/opt/dasha-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 31vw, 46vw">
+            <img src="img/opt/dasha-720.jpg" alt="Collar estilo Cobra gris y naranja con el nombre DASHA" width="720" height="720" loading="lazy" decoding="async">
+          </picture>
+          <div class="pieza__info"><strong>Dasha</strong><span>Cobra · gris y naranja</span></div>
+          <button class="pieza__btn" type="button" data-nombre="Dasha" data-preset='{"estilo":"cobra","c1":"gris","c2":"naranja","broche":"naranja","dijes":[]}'>Quiero uno así</button>
+        </li>
+        <li class="pieza" data-estilo="cobra">
+          <picture>
+            <source type="image/webp" srcset="img/opt/zaly-400.webp 400w, img/opt/zaly-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 31vw, 46vw">
+            <img src="img/opt/zaly-720.jpg" alt="Collar estilo Cobra turquesa y morado con dijes de moños y corazón" width="720" height="720" loading="lazy" decoding="async">
+          </picture>
+          <div class="pieza__info"><strong>Zaly</strong><span>Cobra · turquesa y morado</span></div>
+          <button class="pieza__btn" type="button" data-nombre="Zaly" data-preset='{"estilo":"cobra","c1":"turquesa","c2":"morado","broche":"morado","dijes":["mono","corazon"]}'>Quiero uno así</button>
+        </li>
+        <li class="pieza" data-estilo="cobra">
+          <picture>
+            <source type="image/webp" srcset="img/opt/sonic-400.webp 400w, img/opt/sonic-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 31vw, 46vw">
+            <img src="img/opt/sonic-720.jpg" alt="Collar estilo Cobra verde limón y turquesa con dijes de galleta y dona" width="720" height="720" loading="lazy" decoding="async">
+          </picture>
+          <div class="pieza__info"><strong>Sonic</strong><span>Cobra · verde limón y turquesa</span></div>
+          <button class="pieza__btn" type="button" data-nombre="Sonic" data-preset='{"estilo":"cobra","c1":"limon","c2":"turquesa","broche":"azul","dijes":["galleta","dona"]}'>Quiero uno así</button>
+        </li>
+        <li class="pieza" data-estilo="trenza">
+          <picture>
+            <source type="image/webp" srcset="img/opt/yeli-400.webp 400w, img/opt/yeli-720.webp 720w" sizes="(min-width: 1000px) 270px, (min-width: 640px) 31vw, 46vw">
+            <img src="img/opt/yeli-720.jpg" alt="Collar estilo Trenza menta y negro con dije de moño" width="720" height="720" loading="lazy" decoding="async">
+          </picture>
+          <div class="pieza__info"><strong>Yeli</strong><span>Trenza · menta y negro</span></div>
+          <button class="pieza__btn" type="button" data-nombre="Yeli" data-preset='{"estilo":"trenza","c1":"menta","c2":"negro","broche":"negro","dijes":["mono"]}'>Quiero uno así</button>
+        </li>
+      </ul>
+
+      <p class="galeria__ig reveal">
+        ¿Ya tienes tu MY Pet? Etiquétanos en Instagram y aparece aquí.
+        <a class="link" href="https://instagram.com/mypetmed" target="_blank" rel="noopener" data-track="instagram_galeria"><svg aria-hidden="true"><use href="#i-ig"/></svg> @mypetmed</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ PROMO: HERMANOS / REGALO ============ -->
+  <section class="seccion seccion--promo">
+    <div class="wrap">
+      <div class="promo reveal">
+        <div class="promo__foto">
+          <picture>
+            <source type="image/webp" srcset="img/opt/hermanos-v-640.webp" width="640" height="800">
+            <img src="img/opt/hermanos-v-640.jpg" alt="Collares a juego naranja y azul para tres hermanos: TOBBY, MAX y ROCCO, uno con dije navideño de muñeco de nieve" width="640" height="800" loading="lazy" decoding="async">
+          </picture>
+        </div>
+        <div class="promo__texto">
+          <p class="kicker">Hermanos y regalos</p>
+          <h2>¿Más de un peludo en casa? Collares a juego</h2>
+          <p>Tobby, Max y Rocco estrenaron collares iguales, cada uno con su nombre y su propio dije. Hasta hay dije navideño de muñeco de nieve.</p>
+          <ul class="checks">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg> Mismos colores, un nombre para cada uno</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg> Dijes distintos para diferenciarlos</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg> Un regalo de Navidad que sí van a usar</li>
+          </ul>
+          <div class="promo__ctas">
+            <a class="btn" href="#personaliza" data-wa="hermanos" data-origen="promo"><svg aria-hidden="true"><use href="#i-wa"/></svg> Pedir collares a juego</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PERSONALIZADOR ============ -->
+  <section class="seccion seccion--rosa" id="personaliza">
+    <div class="wrap">
+      <div class="seccion__head">
+        <p class="kicker">Personalizador</p>
+        <h2>Diseña el collar de tu peludo</h2>
+        <p class="intro">Elige estilo, colores, su nombre y dijes. Mira cómo queda y envíanos el diseño por WhatsApp con un toque.</p>
+      </div>
+
+      <div class="config">
+        <div class="config__aside">
+          <div class="config__preview" id="preview-box">
+            <svg id="preview" viewBox="0 0 640 210" role="img" aria-label="Vista previa del collar"></svg>
+          </div>
+
+          <div class="config__resumen" id="resumen-box">
+            <h3>Tu diseño</h3>
+            <dl class="resumen" id="resumen"></dl>
+            <div class="precio-est" id="precio-est" hidden></div>
+            <a class="btn btn--block btn--lg" id="cta-pedido" href="#personaliza" target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href="#i-wa"/></svg> Pedir este diseño
+            </a>
+            <button class="btn-texto" type="button" id="compartir"><svg aria-hidden="true"><use href="#i-compartir"/></svg> Compartir diseño</button>
+            <p class="config__nota">Vista previa ilustrativa: tu collar real se teje a mano. Te confirmamos precio, tiempo de entrega y formas de pago por WhatsApp.</p>
+          </div>
+        </div>
+
+        <form class="config__form" id="config" novalidate>
+          <fieldset class="paso">
+            <legend><span class="paso__n">1</span> Estilo</legend>
+            <div class="opciones-estilo" id="opt-estilo"></div>
+          </fieldset>
+
+          <fieldset class="paso">
+            <legend><span class="paso__n">2</span> Colores</legend>
+            <div class="campo">
+              <p class="campo__label"><span id="lbl-c1">Color 1</span>: <strong id="out-c1"></strong></p>
+              <div class="swatches" id="opt-c1" role="radiogroup" aria-labelledby="lbl-c1"></div>
+            </div>
+            <div class="campo" id="campo-c2">
+              <p class="campo__label"><span id="lbl-c2">Color 2</span>: <strong id="out-c2"></strong></p>
+              <div class="swatches" id="opt-c2" role="radiogroup" aria-labelledby="lbl-c2"></div>
+            </div>
+            <div class="campo" id="campo-broche">
+              <p class="campo__label"><span id="lbl-broche">Broche</span>: <strong id="out-broche"></strong></p>
+              <div class="swatches swatches--sm" id="opt-broche" role="radiogroup" aria-labelledby="lbl-broche"></div>
+            </div>
+            <p class="ayuda">¿Buscas otro color? Escríbenos, tenemos más tonos.</p>
+          </fieldset>
+
+          <fieldset class="paso">
+            <legend><span class="paso__n">3</span> Su nombre</legend>
+            <label class="campo__label" for="nombre">Nombre en letras <span class="opcional">(opcional)</span></label>
+            <input class="input input--nombre" id="nombre" name="nombre" type="text" maxlength="10" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Ej: LUNA">
+            <p class="ayuda"><span id="nombre-cuenta">0</span>/10 letras · También puedes poner números o iniciales.</p>
+          </fieldset>
+
+          <fieldset class="paso">
+            <legend><span class="paso__n">4</span> Dijes <span class="opcional">(hasta 3)</span></legend>
+            <div class="dijes" id="opt-dijes"></div>
+          </fieldset>
+
+          <fieldset class="paso">
+            <legend><span class="paso__n">5</span> Tu peludo</legend>
+            <div class="segmentado" role="radiogroup" aria-label="Tipo de mascota">
+              <label><input type="radio" name="mascota" value="perro" checked><span>Perro</span></label>
+              <label><input type="radio" name="mascota" value="gato"><span>Gato</span></label>
+            </div>
+            <div class="campo campo--fila">
+              <div>
+                <label class="campo__label" for="cuello">Medida del cuello</label>
+                <div class="input-cm">
+                  <input class="input" id="cuello" name="cuello" type="number" min="10" max="90" step="0.5" inputmode="decimal" placeholder="Ej: 32">
+                  <span>cm</span>
+                </div>
+              </div>
+              <a class="link" href="#medidas">¿Cómo medirlo?</a>
+            </div>
+            <label class="check"><input type="checkbox" id="sin-medida"> <span>No sé la medida, ayúdenme a calcularla</span></label>
+            <div class="campo campo--fila">
+              <div>
+                <p class="campo__label" id="lbl-cantidad">Cantidad</p>
+                <div class="stepper" role="group" aria-labelledby="lbl-cantidad">
+                  <button type="button" data-paso="-1" aria-label="Quitar uno">−</button>
+                  <output id="cantidad" aria-live="polite">1</output>
+                  <button type="button" data-paso="1" aria-label="Agregar uno">+</button>
+                </div>
+              </div>
+              <p class="ayuda">¿Varios peludos? Hacemos collares a juego.</p>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CÓMO PEDIR ============ -->
+  <section class="seccion seccion--oscura" id="como-pedir">
+    <div class="wrap">
+      <div class="seccion__head reveal">
+        <p class="kicker">Así de fácil</p>
+        <h2>Cómo pedir tu collar</h2>
+        <p class="intro">Todo por WhatsApp, sin registros ni formularios.</p>
+      </div>
+      <ol class="pasos">
+        <li class="reveal">
+          <h3>Diseña o escríbenos</h3>
+          <p>Usa el personalizador o cuéntanos qué te imaginas: estilo, colores, nombre y dijes.</p>
+        </li>
+        <li class="reveal">
+          <h3>Confirmamos tu pedido</h3>
+          <p>Te enviamos el valor, el tiempo de entrega y las formas de pago.</p>
+        </li>
+        <li class="reveal">
+          <h3>Lo tejemos y te lo enviamos</h3>
+          <p>Hecho a mano y empacado con cariño. Llega a cualquier ciudad de Colombia.</p>
+        </li>
+      </ol>
+      <div class="pasos__cta reveal">
+        <a class="btn btn--lg" href="#personaliza" data-track="pasos_disenar">Empezar mi diseño <svg aria-hidden="true"><use href="#i-flecha"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MEDIDAS ============ -->
+  <section class="seccion" id="medidas">
+    <div class="wrap medidas">
+      <div class="medidas__ilus reveal" aria-hidden="true">
+        <svg viewBox="0 0 320 260">
+          <ellipse cx="160" cy="236" rx="110" ry="12" fill="#FFE0DD"/>
+          <path d="M112 150 Q104 210 100 236 H220 Q216 210 208 150 Z" fill="#F5D7A8" stroke="#1F2937" stroke-width="4" stroke-linejoin="round"/>
+          <ellipse cx="88" cy="96" rx="26" ry="44" transform="rotate(18 88 96)" fill="#D9A86C" stroke="#1F2937" stroke-width="4"/>
+          <ellipse cx="232" cy="96" rx="26" ry="44" transform="rotate(-18 232 96)" fill="#D9A86C" stroke="#1F2937" stroke-width="4"/>
+          <circle cx="160" cy="98" r="62" fill="#F5D7A8" stroke="#1F2937" stroke-width="4"/>
+          <circle cx="138" cy="90" r="7" fill="#1F2937"/><circle cx="182" cy="90" r="7" fill="#1F2937"/>
+          <ellipse cx="160" cy="116" rx="13" ry="10" fill="#1F2937"/>
+          <path d="M160 126 q0 10 -10 12 M160 126 q0 10 10 12" fill="none" stroke="#1F2937" stroke-width="3" stroke-linecap="round"/>
+          <path d="M106 160 Q160 186 214 160" fill="none" stroke="#E5484D" stroke-width="12" stroke-linecap="round"/>
+          <path d="M106 160 Q160 186 214 160" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="2 8" stroke-linecap="round"/>
+          <g transform="translate(206 186)">
+            <rect x="0" y="0" width="92" height="40" rx="20" fill="#fff" stroke="#1F2937" stroke-width="3"/>
+            <text x="46" y="27" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="20" fill="#1F2937">32 cm</text>
+          </g>
+          <g transform="translate(26 168)">
+            <rect x="0" y="0" width="80" height="40" rx="20" fill="#E5484D" stroke="#1F2937" stroke-width="3"/>
+            <text x="40" y="27" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="17" fill="#fff">+2 dedos</text>
+          </g>
+        </svg>
+      </div>
+      <div class="medidas__texto">
+        <p class="kicker">Guía de tallas</p>
+        <h2>¿Qué medida necesita?</h2>
+        <p class="intro">Como cada collar se hace a su medida, solo necesitamos un dato. Medir toma un minuto.</p>
+        <ol class="lista-num">
+          <li>Pasa una cinta métrica (o un cordón que luego mides con una regla) alrededor del cuello, justo donde iría el collar.</li>
+          <li>Déjale espacio para que entren dos dedos entre el collar y el cuello.</li>
+          <li>Escribe esa medida en centímetros en el personalizador o envíanosla por WhatsApp.</li>
+        </ol>
+        <div class="nota">
+          <p><strong>¿Dudas con la talla?</strong> Mándanos una foto de tu peludo y su peso aproximado. Te ayudamos a elegir.</p>
+          <a class="btn btn--sm btn--ghost" href="#personaliza" data-wa="talla" data-origen="medidas"><svg aria-hidden="true"><use href="#i-wa"/></svg> Pedir ayuda con la talla</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PREGUNTAS FRECUENTES ============ -->
+  <section class="seccion seccion--rosa" id="preguntas">
+    <div class="wrap faq">
+      <div class="seccion__head reveal">
+        <p class="kicker">Preguntas frecuentes</p>
+        <h2>Resolvemos tus dudas</h2>
+      </div>
+      <div class="faq__lista">
+        <details>
+          <summary>¿De qué material son los collares?<svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p>Son de paracord: una cuerda de nylon trenzado, resistente, liviana y de secado rápido. Las letras y los dijes van sujetos al collar con argollas metálicas.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto se demora mi pedido?<svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p>Cada collar se hace por encargo. Cuando confirmamos tu diseño por WhatsApp te decimos el tiempo exacto de elaboración y de envío a tu ciudad. Si es un regalo con fecha, cuéntanos para organizarnos.</p>
+        </details>
+        <details>
+          <summary>¿Hacen envíos a mi ciudad?<svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p>Sí. Estamos en Medellín y enviamos a cualquier ciudad de Colombia.</p>
+        </details>
+        <details>
+          <summary>¿Cómo pago?<svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p>Al confirmar tu pedido por WhatsApp te compartimos las formas de pago disponibles. No tienes que registrarte ni pagar nada en esta página.</p>
+        </details>
+        <details>
+          <summary>¿Cómo sé qué talla necesita?<svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p>Mide el contorno del cuello y deja espacio para dos dedos. Mira la <a href="#medidas">guía de medidas</a> o envíanos una foto y su peso y te ayudamos.</p>
+        </details>
+        <details>
+          <summary>¿Sirven para gatos?<svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p>Sí, hacemos collares para gatos y perros pequeños. Cuéntanos que es para un gato y te recomendamos el estilo y el tamaño adecuados.</p>
+        </details>
+        <details>
+          <summary>¿Cómo lo lavo?<svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p>A mano, con agua tibia y jabón suave. Déjalo secar al aire; el paracord seca rápido.</p>
+        </details>
+        <details>
+          <summary>¿Puedo pedir otros colores o dijes?<svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <p>Claro. En el personalizador están los más pedidos; si buscas otro color o un dije especial, pregúntanos por WhatsApp.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CIERRE ============ -->
+  <section class="cierre">
+    <div class="wrap cierre__in">
+      <div>
+        <h2>Dale un collar tan único como tu peludo</h2>
+        <p>Cada pieza se hace por encargo, con los colores y el nombre que elijas.</p>
+      </div>
+      <div class="cierre__ctas">
+        <a class="btn btn--lg btn--blanco" href="#personaliza" data-track="cierre_disenar">Diseñar su collar</a>
+        <a class="btn btn--lg btn--borde-blanco" href="#personaliza" data-wa="general" data-origen="cierre"><svg aria-hidden="true"><use href="#i-wa"/></svg> Escribir por WhatsApp</a>
+      </div>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span>© <span id="anio">2026</span> MY Pet · Hecho a mano en Medellín</span>
-    
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div>
+      <a class="logo" href="#inicio" aria-label="MY Pet, ir al inicio">
+        <span><span class="logo__my">MY</span><span class="logo__pet">Pet</span></span>
+        <svg aria-hidden="true"><use href="#i-pata"/></svg>
+      </a>
+      <p>Collares de paracord personalizados para perros y gatos, hechos a mano en Medellín.</p>
+    </div>
+    <nav aria-label="Pie de página">
+      <h3>Explora</h3>
+      <a href="#estilos">Estilos</a>
+      <a href="#galeria">Galería</a>
+      <a href="#personaliza">Diseña el tuyo</a>
+      <a href="#medidas">Guía de medidas</a>
+      <a href="#preguntas">Preguntas frecuentes</a>
+    </nav>
+    <div>
+      <h3>Hablemos</h3>
+      <a href="#personaliza" data-wa="general" data-origen="footer"><svg aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp</a>
+      <a href="https://instagram.com/mypetmed" target="_blank" rel="noopener" data-track="instagram_footer"><svg aria-hidden="true"><use href="#i-ig"/></svg> @mypetmed</a>
+    </div>
+  </div>
+  <div class="wrap footer__legal">
+    <span>© <span id="anio">2026</span> MY Pet · Hecho a mano en Medellín, Colombia</span>
   </div>
 </footer>
 
-<script>document.getElementById('anio').textContent = new Date().getFullYear();</script>
+<!-- Botón flotante de WhatsApp -->
+<a class="wa-flotante" href="#personaliza" data-wa="general" data-origen="flotante" aria-label="Escríbenos por WhatsApp">
+  <svg aria-hidden="true"><use href="#i-wa"/></svg>
+</a>
+
+<!-- Barra fija de pedido (solo móvil, dentro del personalizador) -->
+<div class="barra-pedido" id="barra-pedido" aria-hidden="true">
+  <a class="btn btn--block" id="barra-cta" href="#personaliza" target="_blank" rel="noopener" tabindex="-1">
+    <svg aria-hidden="true"><use href="#i-wa"/></svg> Pedir este diseño
+  </a>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/app.js" defer></script>
 </body>
 </html>
